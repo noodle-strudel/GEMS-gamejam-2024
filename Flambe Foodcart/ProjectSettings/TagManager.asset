@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 541050499
+    locked: 0
+  - name: InFridge
+    uniqueID: 2792694133
+    locked: 0
+  - name: Player
+    uniqueID: 2030617725
+    locked: 0
+  - name: OnCounter
+    uniqueID: 1205778073
+    locked: 0
+  - name: OnPlate
+    uniqueID: 3842687379
+    locked: 0
