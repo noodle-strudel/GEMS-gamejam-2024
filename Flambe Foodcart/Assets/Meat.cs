@@ -8,12 +8,16 @@ public class Meat : MonoBehaviour
     Transform _transform;
 
     Vector3 _dropPosition;
+
+    SpriteRenderer _spriteRenderer;
     bool _isChopped;
+    bool _isCooked;
 
     void Start()
     {
         _transform = GetComponent<Transform>();
         _dropPosition = _transform.position;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -22,6 +26,10 @@ public class Meat : MonoBehaviour
         
     }
 
+    void OnMouseDown()
+    {
+        _spriteRenderer.sortingLayerName = "OnPlate";
+    }
     void OnMouseDrag()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -55,6 +63,16 @@ public class Meat : MonoBehaviour
             Debug.Log("Successfully chopped!");
             _isChopped = true;
         }
+
+    }
+
+    public void cook()
+    {
+        
+    }
+
+    public void skewer()
+    {
 
     }
 }
