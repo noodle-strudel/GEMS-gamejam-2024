@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Meat : MonoBehaviour
+public class Skewer : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] Sprite _raw;
-    [SerializeField] Sprite _rawChopped;
-    [SerializeField] Sprite _cooked;
     Transform _transform;
     Vector3 _dropPosition;
     SpriteRenderer _spriteRenderer;
-    bool _isChopped;
-    public bool _isCooked;
 
     void Start()
     {
@@ -46,34 +41,14 @@ public class Meat : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider) 
     {
         Debug.Log(collider);
-        if (collider.gameObject.name != "FridgeFront")
+        if (collider.gameObject.name == "Meat")
         {
-            _dropPosition = collider.gameObject.GetComponent<Transform>().position;
+            if (collider.gameObject.GetComponent<Meat>()._isCooked)
+            {
+                Debug.Log("Kebab now exists!");
+            }
+            
         }
         
-    }
-
-    public void chop()
-    {
-        if (_isChopped)
-        {
-            Debug.Log("Already chopped! No need to chop anymore!");
-        }
-        else
-        {
-            _spriteRenderer.sprite = _rawChopped;
-            _isChopped = true;
-        }
-
-    }
-
-    public void cook()
-    {
-        
-    }
-
-    public void skewer()
-    {
-
     }
 }
