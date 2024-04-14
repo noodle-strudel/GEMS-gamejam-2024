@@ -5,18 +5,17 @@ using UnityEngine;
 public class FridgeFront : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] Sprite _closed;
+    [SerializeField] Sprite _open;
 
-    Transform _transform;
-    Vector2 _movePosition;
+    SpriteRenderer _spriteRenderer;
     Vector2 _originalPosition;
     bool isOpen;
 
     
     void Start()
     {
-        _transform = GetComponent<Transform>();
-        _originalPosition = GetComponent<Transform>().position;
-        _movePosition = _transform.position + new Vector3(-2,0,0);
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         isOpen = false;
     }
 
@@ -31,12 +30,14 @@ public class FridgeFront : MonoBehaviour
         Debug.Log("Test");
         if (isOpen)
         {
-            _transform.position = _originalPosition;
+            _spriteRenderer.sprite = _closed;
+            _spriteRenderer.sortingLayerName = "Player";
             isOpen = false;
         }
         else
         {
-            _transform.position = _movePosition;
+            _spriteRenderer.sprite = _open;
+            _spriteRenderer.sortingLayerName = "Background";
             isOpen = true;
         }
     }
