@@ -27,7 +27,6 @@ public class FridgeFront : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("Test");
         if (isOpen)
         {
             _spriteRenderer.sprite = _closed;

@@ -43,11 +43,7 @@ public class Skewer : MonoBehaviour
         Debug.Log(collider);
         if (collider.gameObject.name == "Meat")
         {
-            if (collider.gameObject.GetComponent<Meat>()._isCooked)
-            {
-                Debug.Log("Kebab now exists!");
-            }
-            
+            collider.gameObject.GetComponent<Meat>().skewer();
         }
         
     }
