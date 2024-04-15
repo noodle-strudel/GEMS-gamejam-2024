@@ -13,6 +13,7 @@ public class Meat : MonoBehaviour
     Transform _transform;
     Vector3 _dropPosition;
     SpriteRenderer _spriteRenderer;
+    public AudioSource winning;
 
     GameObject _player;
     bool _isChopped;
@@ -62,6 +63,7 @@ public class Meat : MonoBehaviour
         }
         if (collider.gameObject.name == "GreenCustomer" && _isKebab)
         {
+            winning.Play();
             SceneManager.LoadScene("Credits");
         }
         

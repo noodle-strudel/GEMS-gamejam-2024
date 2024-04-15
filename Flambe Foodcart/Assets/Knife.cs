@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Knife : MonoBehaviour
 {
-    
+    public AudioSource audio;
     Meat _meatScript;
     Collider2D _itemOnKnife;
 
@@ -35,10 +35,12 @@ public class Knife : MonoBehaviour
     {
         if (_itemOnKnife)
         {
+            audio.Play();
             if (_itemOnKnife.gameObject.name == "Meat")
             {
                 _itemOnKnife.GetComponent<Meat>().chop();
             }
         }
     }
-}
+
+    }
