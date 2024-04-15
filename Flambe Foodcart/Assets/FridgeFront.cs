@@ -10,6 +10,8 @@ public class FridgeFront : MonoBehaviour
 
     SpriteRenderer _spriteRenderer;
     Vector2 _originalPosition;
+    public AudioSource fridgeOpen;
+    public AudioSource fridgeClose;
     bool isOpen;
 
     
@@ -32,12 +34,14 @@ public class FridgeFront : MonoBehaviour
             _spriteRenderer.sprite = _closed;
             _spriteRenderer.sortingLayerName = "Player";
             isOpen = false;
+            fridgeClose.Play();
         }
         else
         {
             _spriteRenderer.sprite = _open;
             _spriteRenderer.sortingLayerName = "Background";
             isOpen = true;
+            fridgeOpen.Play();
         }
     }
 }

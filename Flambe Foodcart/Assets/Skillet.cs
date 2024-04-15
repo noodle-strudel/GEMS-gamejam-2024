@@ -5,6 +5,7 @@ using UnityEngine;
 public class Skillet : MonoBehaviour
 {
 
+    public AudioSource fire;
     Meat _meatScript;
 
     Collider2D _itemOnSkillet;
@@ -31,6 +32,7 @@ public class Skillet : MonoBehaviour
         {
             if (_itemOnSkillet.gameObject.name == "Meat")
             {
+                fire.Play();
                 _itemOnSkillet.GetComponent<Meat>().cook();
             }
         }

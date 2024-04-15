@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Meat : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Meat : MonoBehaviour
     Transform _transform;
     Vector3 _dropPosition;
     SpriteRenderer _spriteRenderer;
+    public AudioSource winning;
 
     GameObject _player;
     bool _isChopped;
@@ -59,9 +61,10 @@ public class Meat : MonoBehaviour
         {
             _dropPosition = collider.gameObject.GetComponent<Transform>().position;
         }
-        if (collider.gameObject.name == "GreenCustomer")
+        if (collider.gameObject.name == "GreenCustomer" && _isKebab)
         {
-            
+            winning.Play();
+            SceneManager.LoadScene("Credits");
         }
         
         
@@ -104,6 +107,7 @@ public class Meat : MonoBehaviour
         if (_isCooked)
         {
             _spriteRenderer.sprite = _kebab;
+            _isKebab = true;
         }
         else
         {

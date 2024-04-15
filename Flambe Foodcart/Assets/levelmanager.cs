@@ -38,4 +38,10 @@ public class levelmanager : MonoBehaviour
     {
         SceneManager.LoadScene(title);
     }
+
+
+    public void exitGame()
+    {
+        Application.Quit();
+    }
 }
