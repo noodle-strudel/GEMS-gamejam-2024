@@ -59,6 +59,10 @@ public class Meat : MonoBehaviour
         {
             _dropPosition = collider.gameObject.GetComponent<Transform>().position;
         }
+        if (collider.gameObject.name == "GreenCustomer")
+        {
+            
+        }
         
         
     }
